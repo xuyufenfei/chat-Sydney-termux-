@@ -16,7 +16,7 @@ pkg install python-pip -y || show_error_and_exit "安装 Python pip 失败"
 echo -e "\e[32m  正在安装setuptools  \e[0m"
 pip install setuptools || show_error_and_exit "安装 setuptools 失败"
 echo -e "\e[32m  依赖下载完成，开始拉取仓库  \e[0m"  
-git clone https://github.com/xuyufenfei/ChatSydney-react-img || rm -rf ChatSydney-react-img && git clone https://github.com/xuyufenfei/ChatSydney-react-img || show_error_and_exit "拉取失败"
+git clone https://github.com/xuyufenfei/ChatSydney-react-img || (rm -rf ChatSydney-react-img && git clone https://github.com/xuyufenfei/ChatSydney-react-img) || show_error_and_exit "拉取失败"
 echo -e "\e[32m  拉取完成，安装pip包  \e[0m"
 cd ChatSydney-react-img
 pip install -r requirements.txt --upgrade || show_error_and_exit "失败"
