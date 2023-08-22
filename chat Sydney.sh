@@ -1,13 +1,14 @@
 #!/bin/bash
-echo -e "\e[32m  欢迎使用本脚本，确保开启代理，本脚本只用于zerotermux，请确保您的zerotermux未安装任何软件包，有问题加q群811759124，安装将在5秒后开始  \e[0m"  
-sleep 5
+echo -e "\e[32m  欢迎使用本脚本，确保开启代理，本脚本只用于zerotermux，请确保您的zerotermux未安装任何软件包，有问题加q群811759124，安装将在6秒后开始  \e[0m"  
+sleep 6
 echo -e "\e[32m  开始下载依赖  \e[0m"  
 show_error_and_exit() {
     echo -e "\e[91m错误：$1\e[0m"
     exit 1
 }
 
-echo -e "\e[32m  正在更新软件包,如果卡住，请手动回车确认安装  \e[0m"  
+echo -e "\e[32m  正在更新软件包,如果卡住，请手动回车确认安装  \e[0m" 
+sleep 2
 apt update && apt upgrade -y || show_error_and_exit "更新软件包失败"
 echo -e "\e[32m  正在安装 Git...  \e[0m"  
 pkg install git -y || show_error_and_exit "安装 Git 失败"
