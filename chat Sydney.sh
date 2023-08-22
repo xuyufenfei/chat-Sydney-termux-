@@ -8,7 +8,7 @@ show_error_and_exit() {
 }
 
 echo -e "\e[32m  正在更新软件包,如果卡住，请手动回车确认安装  \e[0m" 
-sleep 2
+sleep 3
 apt update && apt upgrade -y || show_error_and_exit "更新软件包失败"
 echo -e "\e[32m  正在安装 Git...  \e[0m"  
 pkg install git -y || show_error_and_exit "安装 Git 失败"
